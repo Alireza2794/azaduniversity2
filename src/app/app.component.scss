@@ -1,16 +1,29 @@
+// App scss
+* {
+  font-family: Vazirmatn RD UI FD !important;
+  direction: rtl;
+}
+// header scss
+ion-header ion-toolbar ion-title {
+  font-size: small;
+  color: black;
+}
+ion-header ion-toolbar ion-button ion-icon,
+ion-header ion-toolbar ion-button span {
+  color: #757575;
+}
+// sidenav scss
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
 ion-menu.md ion-content {
   --padding-start: 8px;
-  --padding-end: 8px;
-  --padding-top: 20px;
-  --padding-bottom: 20px;
+  --padding-top: 30px;
 }
 
 ion-menu.md ion-list {
-  padding: 20px 0;
+  padding: 20px 2px;
 }
 
 ion-menu.md ion-note {
@@ -20,10 +33,6 @@ ion-menu.md ion-note {
 ion-menu.md ion-list-header,
 ion-menu.md ion-note {
   padding-left: 10px;
-}
-
-ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
 }
 
 ion-menu.md ion-list#inbox-list ion-list-header {
@@ -53,16 +62,16 @@ ion-menu.md ion-item.selected {
   --background: rgba(var(--ion-color-primary-rgb), 0.14);
 }
 
-ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
-}
 
-ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+ion-menu.md ion-item ion-img {
+  margin-left: 0.5rem;
+  width: 16px;
+  height: 16px;
 }
 
 ion-menu.md ion-item ion-label {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: small;
 }
 
 ion-menu.ios ion-content {
@@ -82,15 +91,6 @@ ion-menu.ios ion-item {
   --padding-start: 16px;
   --padding-end: 16px;
   --min-height: 50px;
-}
-
-ion-menu.ios ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
-}
-
-ion-menu.ios ion-item ion-icon {
-  font-size: 24px;
-  color: #73849a;
 }
 
 ion-menu.ios ion-list#labels-list ion-list-header {
@@ -116,4 +116,23 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+
+
+ion-menu ion-title ion-img {
+  margin: auto;
+  margin-top: 9rem;
+}
+ion-menu ion-title {
+  color: #3880ff;
+  font-size: x-small;
+  text-align: center;
+  margin: auto;
+}
+
+@media (min-width : 992px) {
+  ion-menu {
+    width: 180px;
+  }
 }

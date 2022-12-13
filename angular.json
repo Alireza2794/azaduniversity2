@@ -29,10 +29,21 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
-              }
+              },
+              "src/manifest.webmanifest"
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss",
+              "src/assets/bootstarp-rtl/css/bootstrap-grid.rtl.min.css",
+              "src/assets/bootstarp-rtl/css/bootstrap.rtl.min.css",
+              "src/assets/UI-Farsi-Digits/Vazirmatn-RD-UI-FD-font-face.css"
+          ],
+            "scripts": [
+              "src/assets/bootstarp-rtl/js/bootstrap.bundle.min.js"
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -109,10 +120,17 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
-              }
+              },
+              "src/manifest.webmanifest"
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "styles": [
+              "src/theme/variables.scss",
+               "src/global.scss",
+               "src/assets/bootstarp-rtl/css/bootstrap-grid.rtl.min.css",
+               "src/assets/bootstarp-rtl/css/bootstrap.rtl.min.css",
+               "src/assets/UI-Farsi-Digits/Vazirmatn-RD-UI-FD-font-face.css"
+              ],
+            "scripts": ["src/assets/bootstarp-rtl/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
             "ci": {
@@ -136,7 +154,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
