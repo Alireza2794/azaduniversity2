@@ -5,10 +5,10 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>سامانه مدیریت اپلیکیشن دانشگاه</ion-title>
+      <ion-title> سامانه مدیریت اپلیکیشن دانشگاه من</ion-title>
       <ion-button slot="end" fill="clear" >
         <span>خروج</span>
-        <ion-icon slot="start" name="exit-outline"></ion-icon>
+        <ion-img slot="start" src="./assets/icons/Frameexit.png"></ion-img>
       </ion-button>
     </ion-toolbar>
   </ion-header>
@@ -22,13 +22,14 @@
             <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
               <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
                 routerLinkActive="selected">
-                <ion-img [src]="p.Image"></ion-img>
+                <ion-img [src]="p.Image" routerLinkActive="hidden"  ></ion-img>
+                <ion-img [src]="p.Image2" routerLinkActive="active" class="img2"></ion-img>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
           </ion-list>
-          <ion-title><ion-img src="./assets/icons/azadlogo.png" style="width: 40px;"></ion-img>دانشگاه آزاد
-            اسلامی</ion-title>
+          <ion-title><ion-img src="./assets/icons/azadlogo.png" style="width: 32px; height: 52px;"></ion-img>دانشگاه آزاد
+            اسلامی نجف آباد</ion-title>
         </ion-content>
       </ion-menu>
       <!-- main content -->

@@ -3,28 +3,41 @@
   font-family: Vazirmatn RD UI FD !important;
   direction: rtl;
 }
+
 // header scss
+ion-header {
+  box-shadow: 0px 2px 8px rgb(28 45 64 / 8%);
+}
+
 ion-header ion-toolbar ion-title {
   font-size: small;
   color: black;
 }
-ion-header ion-toolbar ion-button ion-icon,
+
 ion-header ion-toolbar ion-button span {
-  color: #757575;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18.4px;
+  letter-spacing: -2%;
+  color: #76778C;
 }
+
+ion-header ion-toolbar ion-icon {
+  color: #137BF4;
+}
+
 // sidenav scss
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
 ion-menu.md ion-content {
-  --padding-start: 8px;
   --padding-top: 30px;
 }
 
-ion-menu.md ion-list {
-  padding: 20px 2px;
-}
+// ion-menu.md ion-list {
+//   padding: 20px 2px;
+// }
 
 ion-menu.md ion-note {
   margin-bottom: 30px;
@@ -55,13 +68,19 @@ ion-menu.md ion-list#labels-list ion-list-header {
 ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
-  border-radius: 4px;
+  --background: #FAFAFC;
+  margin-bottom: 2px;
 }
 
 ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  --background: linear-gradient(270deg, #137BF4 0%, #175CAA 100%);
+  --color: #FFFFFF;
+  border-right: 4px solid #F2BF26;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
 }
-
 
 ion-menu.md ion-item ion-img {
   margin-left: 0.5rem;
@@ -69,9 +88,23 @@ ion-menu.md ion-item ion-img {
   height: 16px;
 }
 
+ion-menu.md ion-item ion-img.hidden {
+  display: none;
+}
+
+ion-menu.md ion-item ion-img.img2 {
+  display: none;
+}
+
+ion-menu.md ion-item ion-img.img2.active {
+  display: flex;
+}
+
 ion-menu.md ion-item ion-label {
-  font-weight: 600;
-  font-size: small;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 ion-menu.ios ion-content {
@@ -124,15 +157,20 @@ ion-menu ion-title ion-img {
   margin: auto;
   margin-top: 9rem;
 }
+
 ion-menu ion-title {
-  color: #3880ff;
-  font-size: x-small;
+  color: #76778C;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
   text-align: center;
+  letter-spacing: -0.02em;
   margin: auto;
 }
 
 @media (min-width : 992px) {
   ion-menu {
-    width: 180px;
+    width: 280px;
   }
 }
