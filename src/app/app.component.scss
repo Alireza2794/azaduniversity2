@@ -99,6 +99,17 @@ ion-menu.md ion-item ion-img.img2 {
 ion-menu.md ion-item ion-img.img2.active {
   display: flex;
 }
+ion-menu.ios ion-item ion-img.hidden {
+  display: none;
+}
+
+ion-menu.ios ion-item ion-img.img2 {
+  display: none;
+}
+
+ion-menu.ios ion-item ion-img.img2.active {
+  display: flex;
+}
 
 ion-menu.md ion-item ion-label {
   font-style: normal;
