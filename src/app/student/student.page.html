@@ -1,0 +1,82 @@
+<ion-content>
+    <ion-grid>
+        <ion-row class="main">
+            <!-- search student list -->
+            <ion-col size-lg="3" size-sm="3" size-xm="6" size="11" class="filterlist">
+                <ion-row>
+                    <ion-col size-md="12" size="12" class="searchlist">
+                        <ion-title class="titlesearch"><span></span>جستجو و فیلترها</ion-title>
+                        <ion-input class="form-control search_input" type="search" name="search" autocomplete="off"
+                            placeholder="جستجو با نام ونام خانوادگی ،کدملی،کددانشجویی و..." [(ngModel)]="searchText"
+                            icon="search-outline"></ion-input>
+                    </ion-col>
+                    <ion-col size-md="12" size="12" class="selectlist">
+                        <form class="form-group">
+                            <div class="mb-3">
+                                <label>رشته تحصیلی</label>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="searchmajor" [ngModelOptions]="{standalone: true}">
+                                    <option [value]="list" selected>همه موارد</option>
+                                    <option value="مهندسی کامپیوتر">مهندسی کامپیوتر</option>
+                                    <option value="مهندسی مواد و صنایع">مهندسی مواد و صنایع</option>
+                                    <option value="مهندسی مکانیک">مهندسی مکانیک</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label>مقطع تحصیلی</label>
+                                <select class="form-select" [(ngModel)]="searchsection"
+                                    [ngModelOptions]="{standalone: true}" >
+                                    <option [value]="list" selected>همه موارد</option>
+                                    <option value="کاردانی"> کاردانی</option>
+                                    <option value="کارشناسی">کارشناسی</option>
+                                    <option value="کارشناسی ارشد"> کارشناسی ارشد</option>
+                                    <option value="دکتری"> دکتری</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label>ترم</label>
+                                <ion-range [dualKnobs]="true" [value]="{ lower: 0, upper: 90}">
+                                </ion-range>
+                                <!-- <ion-label class="end">12</ion-label>
+                                <ion-label class="start">1</ion-label> -->
+                                <!-- <ion-item class="form-control search_input">
+                                        <ion-input  type="search" name="search" autocomplete="off"
+                                        placeholder="جستجو با نام ونام خانوادگی ،کدملی،کددانشجویی و..." [(ngModel)]="searchText"
+                                        ></ion-input>                                       
+                                         <ion-icon name="search-outline"></ion-icon>
+                                    </ion-item>                                     -->
+
+                            </div>
+                        </form>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <!-- table of student list -->
+            <ion-col size-lg="8" size-sm="8" size-xm="6" size="11">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>نام و نام خانوادگی</th>
+                            <th>کد دانشجویی</th>
+                            <th>کد ملی</th>
+                            <th>رشته تحصیلی</th>
+                            <th>ترم و مقطع</th>
+                            <th class="star"><ion-img src="./assets/icons/Framestar.png"></ion-img></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let table of tables | filter:searchText | filter: searchmajor |filter:searchsection">
+                            <td><img [src]="table.imagesrc" class="avatar"/>{{table.fullname}}</td>
+                            <td>{{table.studentid}}</td>
+                            <td>{{table.personalid}}</td>
+                            <td>{{table.major}}</td>
+                            <td>{{table.term}} - {{table.section}}</td>
+                            <td class="bi">{{table.star}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
