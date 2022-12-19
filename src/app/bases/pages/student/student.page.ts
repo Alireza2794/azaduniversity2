@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchbarChangeEventDetail } from '@ionic/angular';
+import { RangeCustomEvent, SearchbarChangeEventDetail } from '@ionic/angular';
 import { MemberListService } from '../service/member-list-service';
 import { StudentPageModule } from './student.module';
+
 
 @Component({
   selector: 'app-student',
@@ -25,7 +26,7 @@ export class StudentPage implements OnInit {
   ngOnInit() {
     this.tables = this.memberListService.getStudentPageModule()
   }
-
+   
 
 }
 

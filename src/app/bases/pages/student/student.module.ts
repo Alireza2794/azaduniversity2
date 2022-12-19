@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { StudentPageRoutingModule } from './student-routing.module';
 import { StudentPage } from './student.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   imports: [
@@ -15,8 +14,7 @@ import { MatSliderModule } from '@angular/material/slider';
     FormsModule,
     IonicModule,
     StudentPageRoutingModule,
-    Ng2SearchPipeModule,
-    MatSliderModule,
+    Ng2SearchPipeModule
   ],
   declarations: [StudentPage]
 })

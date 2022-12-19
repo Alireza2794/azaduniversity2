@@ -38,13 +38,10 @@
                             </div>
                             <div class="mb-3">
                                 <label>ترم</label>
-                                <ion-range slot="start" [dualKnobs]="true" [value]="{ lower: 1, upper: 12}" [min]="1"
-                                    [max]="12" [pin]="true" [ticks]="true" [snaps]="true" >
+                                <ion-range slot="end" [dualKnobs]="true" [value]="{ lower: 1, upper: 12}" [min]="1"
+                                    [max]="12" [pin]="true" [snaps]="true" name="term"
+                                     >
                                 </ion-range>
-                                <mat-slider>
-                                    <input matSliderStartThumb>
-                                    <input matSliderEndThumb>
-                                </mat-slider>
                             </div>
 
                         </form>
@@ -66,7 +63,8 @@
                     </thead>
                     <tbody>
                         <tr
-                            *ngFor="let table of tables | filter:searchText | filter: searchmajor |filter:searchsection |filter:searchterm">
+                            *ngFor="let table of tables | filter:searchText | filter: searchmajor
+                             |filter:searchsection ">
                             <td><img [src]="table.imagesrc" class="avatar" />{{table.fullname}}</td>
                             <td>{{table.studentid}}</td>
                             <td>{{table.personalid}}</td>
