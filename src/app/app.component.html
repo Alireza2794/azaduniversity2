@@ -1,35 +1,40 @@
 <ion-app>
-  <!-- App header -->
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title> سامانه مدیریت اپلیکیشن دانشگاه من</ion-title>
-      <ion-button slot="end" fill="clear" >
-        <span>خروج</span>
-        <ion-img slot="start" src="./assets/icons/Frameexit.png"></ion-img>
-      </ion-button>
-    </ion-toolbar>
-  </ion-header>
+ <!-- App header -->
+ <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> سامانه مدیریت اپلیکیشن دانشگاه من</ion-title>
+    <ion-button slot="end" fill="clear">
+      <span>خروج</span>
+      <ion-img slot="start" src="./assets/icons/Frameexit.png"></ion-img>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
   <!-- App content -->
   <ion-content>
     <ion-split-pane contentId="main-content">
       <!-- app sidenav -->
-      <ion-menu class="menu-side-end" contentId="main-content" type="overlay">
+      <ion-menu class="menu-side-end" side="start" contentId="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
             <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
               <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
                 routerLinkActive="selected">
-                <ion-img [src]="p.Image" routerLinkActive="hidden"  ></ion-img>
+                <ion-img [src]="p.Image" routerLinkActive="hidden"></ion-img>
                 <ion-img [src]="p.Image2" routerLinkActive="active" class="img2"></ion-img>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
           </ion-list>
-          <ion-title><ion-img src="./assets/icons/azadlogo.png" style="width: 32px; height: 52px;"></ion-img>دانشگاه آزاد
-            اسلامی نجف آباد</ion-title>
+          <div class="footer-box">
+            <img width="32" src="./assets/icons/azadlogo.png" alt="دانشگاه آزاد نجف‌آباد">
+            <p>دانشگاه آزاد اسلامی نجف آباد</p>
+          </div>
+          <!-- <ion-title><ion-img src="./assets/icons/azadlogo.png" style="width: 32px; height: 52px;"></ion-img>دانشگاه
+            آزاد
+            اسلامی نجف آباد</ion-title> -->
         </ion-content>
       </ion-menu>
       <!-- main content -->

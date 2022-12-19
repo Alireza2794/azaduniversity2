@@ -6,31 +6,32 @@ const routes: Routes = [
   {path: '', redirectTo: 'dashboard',pathMatch: 'full'},
   {
     path: 'dashboard',title : 'دانشگاه آزاد اسلامی - داشبورد',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./bases/pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'student',title : 'لیست دانشجویان',
-    loadChildren: () => import('./student/student.module').then( m => m.StudentPageModule)
+    loadChildren: () => import('./bases/pages/student/student.module').then( m => m.StudentPageModule)
   },
   {
     path: 'message',title : 'پیام های کارتابل' , 
-    loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
+    loadChildren: () => import('./bases/pages/message/message.module').then( m => m.MessagePageModule)
   },
   {
     path: 'new-message', title : 'ارسال پیام جدید' , 
-    loadChildren: () => import('./new-message/new-message.module').then( m => m.NewMessagePageModule)
+    loadChildren: () => import('./bases/pages/message/new-message/new-message.module').then( m => m.NewMessagePageModule)
   },
   {
     path: 'map-university', title : 'نقشه دانشگاه' , 
-    loadChildren: () => import('./map-university/map-university.module').then( m => m.MapUniversityPageModule)
+    loadChildren: () => import('./bases/pages/map-university/map-university.module').then( m => m.MapUniversityPageModule)
   },
   {
     path: 'banners',title : 'بنرها و تبلیغات' , 
-    loadChildren: () => import('./banners/banners.module').then( m => m.BannersPageModule)
-  }
+    loadChildren: () => import('./bases/pages/banners/banners.module').then( m => m.BannersPageModule)
+  },
+  
   // {
-  //   path: 'folder/:id',
-  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  //   path: ' ',
+  //   loadChildren: () => import('./bases/config/base.module').then( m => m.BaseModule)
   // }
 ];
 

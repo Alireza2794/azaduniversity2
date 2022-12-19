@@ -1,0 +1,15 @@
+.container {
+    ion-input {
+        flex: 1;
+    }
+    ion-icon {
+        font-size: 26px;
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        color: var(--primary-text-color);
+        cursor: pointer;
+    }
+}
