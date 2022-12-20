@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./bases/pages/message/message.module').then( m => m.MessagePageModule)
   },
   {
-    path: 'new-message', title : 'ارسال پیام جدید' , 
+    path: 'message/new-message', title : 'ارسال پیام جدید' , 
     loadChildren: () => import('./bases/pages/message/new-message/new-message.module').then( m => m.NewMessagePageModule)
   },
   {

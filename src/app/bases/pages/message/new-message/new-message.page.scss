@@ -1,4 +1,256 @@
 ion-content {
-    --background: #F5F6FA;
-    --height: 100%;
+  --background: #F5F6FA;
+  --height: 100%;
+}
+
+* {
+  font-family: Vazirmatn RD UI FD !important;
+}
+
+/* .cartable css */
+.cartable1 {
+  display: flex;
+  flex-direction: column;
+
+  ion-col {
+    margin: auto;
   }
+
+  /* button a new message */
+  .sendnewback {
+    --background: none;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      span {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: right;
+        letter-spacing: -0.04em;
+        color: #1C2D40;
+      }
+
+      ion-img {
+        width: 24px;
+        height: 24px;
+        margin-left: 0.5rem;
+      }
+    }
+
+
+
+  }
+
+  /* buttons cartable send  */
+  .colsend {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: 0;
+
+    .sendbox {
+      --background: none;
+
+      .sendsubmited1 {
+        height: 37px;
+        font-size: xx-large;
+        font-weight: bolder;
+        color: #fff;
+      }
+
+      .sendsubmited {
+        background: #173ff3;
+
+      }
+
+      .sendbox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .draft {
+        border: none;
+        background: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: right;
+        letter-spacing: -0.04em;
+        color: #A4A4AD;
+      }
+
+      .send2 {
+        background: #137BF4;
+        border-radius: 4px 4px 4px 4px;
+        padding-left: 0 !important;
+        padding-right: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: right;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+        width: 109px;
+        height: 38px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .icon {
+          background: #175CAA;
+          border-radius: 4px 0px 0px 4px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          width: 40px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+/* contact & data table */
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+  color: #137BF4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  span.imgnum {
+    width: 24px;
+    height: 24px;
+    background: rgba(19, 123, 244, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-img {
+      width: 7px;
+    }
+  }
+}
+
+/* cartable section  message */
+.colbox {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  ion-item {
+    box-shadow: 0px 2px 8px rgba(28, 45, 64, 0.16);
+    border-radius: 4px;
+  }
+
+  /* message title */
+  .messagetitle {
+    display: flex;
+    flex-direction: column;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 40px;
+
+    .inputtext {
+      font-size: smaller;
+      border: 1px solid #D2D3D9;
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: right;
+      color: #D2D3D9;
+    }
+  }
+
+
+
+  /* contact title */
+  .contacttitle {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .form-group {
+    display: flex;
+    font-size: smaller;
+    font-weight: 300;
+  }
+
+  .form-select {
+    font-size: small;
+  }
+
+  /* date title */
+  .datetitle {
+    background-color: #fff;
+  }
+
+  .datetitlecheck {
+    font-size: smaller;
+    font-weight: 300;
+  }
+
+  .date {
+    margin-right: 1rem;
+  }
+}
+
+
+/* sidbar responsive  */
+@media (min-width:768px) and (max-width:1180.98px) {
+  .form-control {
+    font-size: 0.65rem !important;
+  }
+}
+
+@media (max-width : 767.98px) {
+  .cartable1 {
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .messagetitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sendbox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .draft {
+    margin-left: 0 !important;
+    margin-bottom: 0.5rem;
+  }
+}

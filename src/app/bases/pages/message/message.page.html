@@ -1,9 +1,110 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>message</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-grid>
+    <ion-row class="main">
+      <!-- search message list -->
+      <ion-col size-lg="3" size-sm="3" size-xm="6" size="11" class="filterlist">
+        <ion-row>
+          <ion-col size-md="12" size="12" class="searchlist">
+            <ion-title class="titlesearch"><span></span>جستجو و فیلترها</ion-title>
+            <div class="search-box">
+              <input type="text" autocomplete="off" placeholder="جستجو با متن پیام و ..." [(ngModel)]="searchText">
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size-md="12" size="12" class="selectlist">
+            <form class="form-group">
+              <div class="mb-3">
+                <label>تاریخ</label>
+                <select class="form-select">
+                  <option [value]="list1">همه موارد</option>
+                </select>
+                <!-- <app-date-picker [(value)]="message.date"></app-date-picker> -->
+              </div>
+              <div class="mb-3">
+                <label>مخاطبین</label>
+                <select class="form-select" [(ngModel)]="searchmajor" [ngModelOptions]="{standalone: true}">
+                  <option [value]="list1">همه موارد</option>
+                  <optgroup label=" مقطع تحصیلی">
+                    <option value="کاردانی"> کاردانی</option>
+                    <option value="کارشناسی">کارشناسی</option>
+                    <option value="کارشناسی ارشد"> کارشناسی ارشد</option>
+                    <option value="دکتری"> دکتری</option>
+                  </optgroup>
+                  <optgroup label="رشته تحصیلی">
+                    <option value="مهندسی کامپیوتر">مهندسی کامپیوتر</option>
+                    <option value="مهندسی مواد">مهندسی مواد</option>
+                    <option value="مهندسی مکانیک">مهندسی مکانیک</option>
+                  </optgroup>
+                  <optgroup label="ترم">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="filter-box">
+                <span>وضعیت پیام</span>
+                <!-- <ul>
+                    <li class="active" [ngClass]="{'active': categorySelected == null}" (click)="handleSelectCategory(null)">همه</li>
+                    <li *ngFor="let message of messages" [ngClass]="{'active': categorySelected == message.status}" (click)="handleSelectCategory(message)">{{message.status}}</li>
+                </ul> -->
+              </div>
+              <!-- <div class="mb-3">
+                <label>وضعیت پیام</label>
+                <div class="filter-box">
+                  <button title="show list1">همه موارد</button>
+                  <button *ngFor="let message of messages">{{message.status}}</button>
+                  <li class="active"  >همه موارد</li>
+                  <li *ngFor="let message of messages"  >{{message.status}}</li>
+                </div>
+              </div> -->
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <!-- table of message list -->
+      <ion-col size-lg="8" size-sm="8" size-xm="6" size="11" class="tablelist">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>تاریخ</th>
+              <th>متن پیام</th>
+              <th>مخاطبین</th>
+              <th>وضعیت</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="newmessage">
+              <td colspan="4">
+                <ion-item  routerDirection="root" routerLink="./new-message" lines="none"
+                  detail="false">
+                  <div>
+                    <ion-img src="./assets/icons/addcomment.png"></ion-img>
+                    <ion-label>ایجاد و ارسال پیام جدید</ion-label>
+                  </div>
+                </ion-item>
+              </td>
+            </tr>
+            <tr *ngFor="let message of messages | filter : searchText | filter: searchmajor">
+              <td>{{message.day}} {{message.date}}</td>
+              <td>{{message.titleMessage}}</td>
+              <td>
+                <div>
+                  <span>{{message.term}}</span>
+                  <span>{{message.major}}</span>
+                  <span>{{message.section}}</span>
+                </div>
+              </td>
+              <td [ngClass]="{
+                'text-send':message.status === 'ارسال شده',
+                'text-other':message.status === 'پیش نویس',
+                'text-other1':message.status === 'زمان بندی شده'
+              }">{{message.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
