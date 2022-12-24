@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-persian/material-date-picker": "^1.8.1",
     "@angular/animations": "^15.0.0",
     "@angular/cdk": "~15.0.3",
     "@angular/common": "^15.0.4",
@@ -24,6 +25,8 @@
     "@angular/pwa": "^15.0.3",
     "@angular/router": "^15.0.4",
     "@angular/service-worker": "^15.0.4",
+    "@awesome-cordova-plugins/fcm": "^6.2.0",
+    "@awesome-cordova-plugins/firebase": "^6.2.0",
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.6.1",
     "@capacitor/haptics": "4.1.0",

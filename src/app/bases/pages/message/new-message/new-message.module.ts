@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { NewMessagePageRoutingModule } from './new-message-routing.module';
 
 import { NewMessagePage } from './new-message.page';
+import { SharedModule } from 'src/app/shared/config/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewMessagePageRoutingModule
+    NewMessagePageRoutingModule,
+    SharedModule
   ],
   declarations: [NewMessagePage]
 })

@@ -15,10 +15,13 @@
             <form class="form-group">
               <div class="mb-3">
                 <label>تاریخ</label>
-                <select class="form-select">
+                <!-- <select class="form-select">
                   <option [value]="list1">همه موارد</option>
-                </select>
-                <!-- <app-date-picker [(value)]="message.date"></app-date-picker> -->
+                </select> -->
+                <ion-item class="datelist" lines="none" detail="false">
+                  <ion-label position="floating">همه موارد</ion-label>
+                  <app-date-picker [(value)]="list1"></app-date-picker>
+                </ion-item>
               </div>
               <div class="mb-3">
                 <label>مخاطبین</label>
@@ -36,7 +39,7 @@
                     <option value="مهندسی مکانیک">مهندسی مکانیک</option>
                   </optgroup>
                   <optgroup label="ترم">
-                    <option value="1">1</option>
+                    <option value="ترم:1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -45,10 +48,12 @@
               </div>
               <div class="filter-box">
                 <span>وضعیت پیام</span>
-                <!-- <ul>
-                    <li class="active" [ngClass]="{'active': categorySelected == null}" (click)="handleSelectCategory(null)">همه</li>
-                    <li *ngFor="let message of messages" [ngClass]="{'active': categorySelected == message.status}" (click)="handleSelectCategory(message)">{{message.status}}</li>
-                </ul> -->
+                <ul>
+                  <li class="active" [value]="list1">همه موارد</li>
+                  <li value="ارسال شده">ارسال شده</li>
+                  <li value="پیش نویس">پیش نویس</li>
+                  <li value="زمان بندی شده">زمان بندی شده</li>
+                </ul>
               </div>
               <!-- <div class="mb-3">
                 <label>وضعیت پیام</label>
@@ -77,8 +82,7 @@
           <tbody>
             <tr class="newmessage">
               <td colspan="4">
-                <ion-item  routerDirection="root" routerLink="./new-message" lines="none"
-                  detail="false">
+                <ion-item routerDirection="root" routerLink="./new-message" lines="none" detail="false">
                   <div>
                     <ion-img src="./assets/icons/addcomment.png"></ion-img>
                     <ion-label>ایجاد و ارسال پیام جدید</ion-label>
@@ -90,7 +94,7 @@
               <td>{{message.day}} {{message.date}}</td>
               <td>{{message.titleMessage}}</td>
               <td>
-                <div>
+                <div class="cont">
                   <span>{{message.term}}</span>
                   <span>{{message.major}}</span>
                   <span>{{message.section}}</span>

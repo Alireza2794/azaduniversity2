@@ -166,9 +166,9 @@ ion-content {
   .messagetitle {
     display: flex;
     flex-direction: column;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
 
     .inputtext {
       font-size: smaller;
@@ -190,27 +190,51 @@ ion-content {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
   }
 
   .form-group {
     display: flex;
-    font-size: smaller;
-    font-weight: 300;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: right;
+    color: #76778C;
+
+    label {
+      padding-bottom: 1px;
+    }
   }
 
   .form-select {
-    font-size: small;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: right;
+    color: #76778C;
   }
 
   /* date title */
   .datetitle {
     background-color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+
+
   }
 
   .datetitlecheck {
-    font-size: smaller;
-    font-weight: 300;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    color: #76778C;
   }
 
   .date {
@@ -220,11 +244,6 @@ ion-content {
 
 
 /* sidbar responsive  */
-@media (min-width:768px) and (max-width:1180.98px) {
-  .form-control {
-    font-size: 0.65rem !important;
-  }
-}
 
 @media (max-width : 767.98px) {
   .cartable1 {
@@ -235,22 +254,17 @@ ion-content {
   .messagetitle {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin: auto;
+  }
+
+  .contacttitle {
+    display: flex;
+    margin: auto;
   }
 
   .form-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
-  .sendbox {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .draft {
-    margin-left: 0 !important;
-    margin-bottom: 0.5rem;
-  }
 }

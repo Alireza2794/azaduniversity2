@@ -9,8 +9,9 @@ import { MessagePageRoutingModule } from './message-routing.module';
 import { MessagePage } from './message.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DatePipe } from '../../pips/date.pipe';
+import { SharedModule } from 'src/app/shared/config/shared.module';
 
-// const Pipes = [DatePipe];
+const Pipes = [DatePipe];
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { DatePipe } from '../../pips/date.pipe';
     FormsModule,
     IonicModule,
     MessagePageRoutingModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    SharedModule
   ],
   declarations: [MessagePage],
 })
