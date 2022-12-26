@@ -1,0 +1,222 @@
+<div class="content-box">
+    <div class="container-box">
+        <div class="row">
+            <div style="flex: 1;">
+                <div class="logo-box">
+                    <img src="assets/icon/favicon.png" alt="">
+                    <h4>دانشگاه آزاد اسلامی</h4>
+                </div>
+                <form [formGroup]="FormGroup" (ngSubmit)="login()">
+                    <ion-item>
+                        <ion-label position="floating">نام کاربری</ion-label>
+                        <ion-input formControlName="usernameFormControl"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">رمز عبور</ion-label>
+                        <ion-input type="Password" formControlName="passwordFormControl"></ion-input>
+                    </ion-item>
+                    <ion-button [disabled]="loading" type="submit" expand="block">
+                        <!-- <ion-spinner name="crescent" *ngIf="loading"></ion-spinner> -->
+                        <span >ورود</span>
+                    </ion-button>
+                </form>
+            </div>
+
+        </div>
+
+
+        <!-- <div class="detail-box" *ngIf="!isAndroidApk">
+            <div>
+                <h4 class="ion-text-center">{{lng.Translate('login-app-download-h4')}}</h4>
+                <div class="ion-text-center">
+                    <span class="first">{{lng.Translate('login-app-download-span1')}}</span>
+                    <br>
+                    <span class="secound">{{lng.Translate('login-app-download-span2')}}</span>
+                    <p>{{lng.Translate('login-app-download-detail')}}</p>
+                </div>
+            </div>
+            <div class="feature-box">
+                <ul>
+                    <li class="green">
+                        <div class="icon-box">
+                            <img src="assets/icon/landing-2.svg" alt="">
+                        </div>
+                        <div class="body-box">
+                            <h4>{{lng.Translate('login-app-feature-green-h4')}}</h4>
+                            <p>{{lng.Translate('login-app-feature-green-p')}}</p>
+                        </div>
+                    </li>
+                    <li class="red">
+                        <div class="icon-box">
+                            <img src="assets/icon/landing-1.svg" alt="">
+                        </div>
+                        <div class="body-box">
+                            <h4>{{lng.Translate('login-app-feature-red-h4')}}</h4>
+                            <p>{{lng.Translate('login-app-feature-red-p')}}</p>
+                        </div>
+                    </li>
+                    <li class="blue">
+                        <div class="icon-box">
+                            <img src="assets/icon/landing-3.svg" alt="">
+                        </div>
+                        <div class="body-box">
+                            <h4>{{lng.Translate('login-app-feature-blue-h4')}}</h4>
+                            <p>{{lng.Translate('login-app-feature-blue-p')}}</p>
+                        </div>
+                    </li>
+                    <li class="purple">
+                        <div class="icon-box">
+                            <img src="assets/icon/landing-4.svg" alt="">
+                        </div>
+                        <div class="body-box">
+                            <h4>{{lng.Translate('login-app-feature-purple-h4')}}</h4>
+                            <p>{{lng.Translate('login-app-feature-purple-p')}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="video-box">
+                <video width="400" controls>
+                    <source src="https://mydownload.iaun.ac.ir/video/intro.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+
+            <div class="contact-box">
+                <div>
+                    <h4>{{lng.Translate('login-app-contact-h4')}}</h4>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.42" height="15.186"
+                                viewBox="0 0 15.42 15.186">
+                                <g id="Group_2959" data-name="Group 2959" transform="translate(-807.338 -93.591)">
+                                    <g id="phone-call" transform="translate(807.614 94.89)">
+                                        <path id="Path_105" data-name="Path 105"
+                                            d="M10.96,13.637a5.857,5.857,0,0,1-2.006-.427A15.052,15.052,0,0,1,3.892,9.745,15.063,15.063,0,0,1,.426,4.682c-.566-1.5-.568-2.735,0-3.3C.5,1.3.586,1.215.671,1.125A2.671,2.671,0,0,1,2.54,0,2.236,2.236,0,0,1,4.114,1.01c1.559,1.938.856,2.629.043,3.43l-.144.142c-.133.133-.384.749,1.954,3.087A12.966,12.966,0,0,0,7.9,9.329c.327.213.913.535,1.154.294L9.2,9.478c.8-.811,1.491-1.512,3.428.045A2.235,2.235,0,0,1,13.635,11.1a2.658,2.658,0,0,1-1.125,1.869c-.089.085-.177.168-.258.249A1.787,1.787,0,0,1,10.96,13.637ZM2.485.459C1.937.459,1.442.98,1,1.441c-.088.093-.173.183-.257.266-.421.42-.378,1.524.108,2.814a14.6,14.6,0,0,0,3.362,4.9,14.591,14.591,0,0,0,4.9,3.361c1.289.487,2.393.528,2.813.109.084-.084.174-.169.266-.257.471-.448,1.005-.955.982-1.518a1.855,1.855,0,0,0-.837-1.236c-1.614-1.3-2.065-.84-2.814-.081l-.147.148c-.358.358-.939.279-1.728-.234a13.393,13.393,0,0,1-2.009-1.72C3.7,6.052,3.082,4.865,3.689,4.256l.146-.144c.761-.749,1.22-1.2-.078-2.815A1.861,1.861,0,0,0,2.521.459Z"
+                                            transform="translate(0 0)" fill="none" stroke="#212936" stroke-width="0.5">
+                                        </path>
+                                    </g>
+                                    <g id="technology" transform="translate(809 92.999)">
+                                        <g id="Group_385" data-name="Group 385" transform="translate(0 0.001)">
+                                            <g id="Group_384" data-name="Group 384" transform="translate(0 0)">
+                                                <path id="Path_829" class="section-icon" data-name="Path 829"
+                                                    d="M248.56,22.211h.028a5.088,5.088,0,0,1,5.1,5.124.561.561,0,0,0,.558.563h0a.561.561,0,0,0,.56-.558,6.209,6.209,0,0,0-6.219-6.25h-.031a.561.561,0,0,0,0,1.121Z"
+                                                    transform="translate(-241.049 -20.499)" fill="#fa2841"></path>
+                                                <path id="Path_831" class="section-icon" data-name="Path 831"
+                                                    d="M294.348,112.794a3.081,3.081,0,0,0-1.456-.838.561.561,0,0,0-.3,1.08,1.96,1.96,0,0,1,.962.55,2,2,0,0,1,.544.944l.008.027a.561.561,0,1,0,1.075-.318l-.008-.026A3.085,3.085,0,0,0,294.348,112.794Z"
+                                                    transform="translate(-283.994 -108.799)" fill="#fa2841"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <a href="tel:۰۳۱-۴۲۲۹۲۹۲۹">{{lng.Translate('login-app-contact-tel')}}</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.485" height="12.32"
+                                viewBox="0 0 15.485 12.32">
+                                <g id="Group_2960" data-name="Group 2960" transform="translate(-807.481 -117.61)">
+                                    <g id="Group_13" data-name="Group 13" transform="translate(807.481 117.61)">
+                                        <path id="Path_27" data-name="Path 27"
+                                            d="M978.672,236.062a3.294,3.294,0,0,0-1.554-2.522,8.057,8.057,0,0,0-3.237-.781l-.216-.021a25.359,25.359,0,0,0-6.555.171,8,8,0,0,0-1.48.349h0a3.167,3.167,0,0,0-1.421.936,4.051,4.051,0,0,0-.74,2.3,23.069,23.069,0,0,0-.11,2.688c.01.362.024.784.059,1.2a5.853,5.853,0,0,0,.783,2.716,3.759,3.759,0,0,0,2.881,1.531,33.991,33.991,0,0,0,3.875.3h.083a26.568,26.568,0,0,0,3.879-.319,5.211,5.211,0,0,0,2.751-1.011,3.921,3.921,0,0,0,1.039-2.78A19.538,19.538,0,0,0,978.672,236.062Zm-.773,4.681a3.226,3.226,0,0,1-.768,2.239,4.525,4.525,0,0,1-2.328.814,26.246,26.246,0,0,1-3.841.311,33.311,33.311,0,0,1-3.783-.293,2.884,2.884,0,0,1-2.295-1.167,5.111,5.111,0,0,1-.653-2.339c-.033-.394-.047-.8-.057-1.153a22.34,22.34,0,0,1,.108-2.593,3.32,3.32,0,0,1,.557-1.848,2.388,2.388,0,0,1,1.069-.688,7.247,7.247,0,0,1,1.327-.31,24.566,24.566,0,0,1,6.349-.165l.22.022a7.456,7.456,0,0,1,2.919.681,2.529,2.529,0,0,1,1.146,1.941A18.83,18.83,0,0,1,977.9,240.744Z"
+                                            transform="translate(-963.352 -232.602)" fill="#212936"></path>
+                                        <path id="Path_28" class="section-icon" data-name="Path 28"
+                                            d="M982.791,243.182l-4.165,3.284a.257.257,0,0,1-.346,0l-4.165-3.284a.407.407,0,1,0-.5.64l4.165,3.284a1.064,1.064,0,0,0,1.356,0l4.165-3.284a.407.407,0,1,0-.5-.64Z"
+                                            transform="translate(-970.711 -240.244)" fill="#fa2841"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <a href="mailto:info@iaun.ac.ir">info@iaun.ac.ir</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12.73" height="14.775"
+                                viewBox="0 0 12.73 14.775">
+                                <g id="pin-v1" transform="translate(-287.309 -230.248)">
+                                    <path id="Path_8" class="section-icon" data-name="Path 8"
+                                        d="M300.03,236.261a6.407,6.407,0,0,0-6.1-6.009,6.367,6.367,0,0,0-5.778,9.53,29.971,29.971,0,0,0,4.353,4.767,1.751,1.751,0,0,0,2.393,0c1.4-1.32,3.859-3.76,4.557-5.273A6.4,6.4,0,0,0,300.03,236.261Zm-1.378,2.645a22.372,22.372,0,0,1-4.36,5,.865.865,0,0,1-1.18,0,27.3,27.3,0,0,1-4.191-4.562,5.481,5.481,0,0,1,4.751-8.208c.075,0,.15,0,.225,0a5.514,5.514,0,0,1,5.249,5.171A5.434,5.434,0,0,1,298.652,238.907Z"
+                                        fill="#fa2841"></path>
+                                    <path id="Path_9" data-name="Path 9"
+                                        d="M304.792,244.307a1.844,1.844,0,1,0,1.844,1.844A1.846,1.846,0,0,0,304.792,244.307Zm0,2.8a.959.959,0,1,1,.959-.959A.96.96,0,0,1,304.792,247.11Z"
+                                        transform="translate(-11.023 -9.909)" fill="#212936"></path>
+                                </g>
+                            </svg>
+                            <p>{{lng.Translate('login-app-contact-address')}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social-box">
+                    <h4>ه{{lng.Translate('login-app-social-h4')}}</h4>
+                    <ul>
+                        <li>
+                            <a href="https://www.t.me/https://t.me/iaunac">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.013" height="17.511"
+                                    viewBox="0 0 21.013 17.511">
+                                    <path id="telegram"
+                                        d="M8.245,13.541,7.9,18.43a1.215,1.215,0,0,0,.971-.47L11.2,15.731l4.831,3.538c.886.494,1.51.234,1.749-.815l3.171-14.86h0c.281-1.31-.474-1.822-1.337-1.5L.975,9.229c-1.272.494-1.253,1.2-.216,1.524l4.766,1.482L16.594,5.31c.521-.345.995-.154.605.191Z"
+                                        transform="translate(0 -2)"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/https://instagram.com/iaun.najafabad">
+                                <svg id="instagram" xmlns="http://www.w3.org/2000/svg" width="22.694" height="22.694"
+                                    viewBox="0 0 22.694 22.694">
+                                    <g id="Group_40" data-name="Group 40">
+                                        <g id="Group_39" data-name="Group 39">
+                                            <path id="Path_79" data-name="Path 79"
+                                                d="M15.6,0H7.092A7.093,7.093,0,0,0,0,7.092V15.6a7.093,7.093,0,0,0,7.092,7.092H15.6A7.093,7.093,0,0,0,22.694,15.6V7.092A7.093,7.093,0,0,0,15.6,0Zm4.964,15.6A4.97,4.97,0,0,1,15.6,20.566H7.092A4.97,4.97,0,0,1,2.128,15.6V7.092A4.97,4.97,0,0,1,7.092,2.128H15.6a4.97,4.97,0,0,1,4.964,4.964Z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                    <g id="Group_42" data-name="Group 42" transform="translate(5.674 5.674)">
+                                        <g id="Group_41" data-name="Group 41">
+                                            <path id="Path_80" data-name="Path 80"
+                                                d="M133.673,128a5.674,5.674,0,1,0,5.674,5.674A5.674,5.674,0,0,0,133.673,128Zm0,9.219a3.546,3.546,0,1,1,3.546-3.546A3.551,3.551,0,0,1,133.673,137.219Z"
+                                                transform="translate(-128 -128)"></path>
+                                        </g>
+                                    </g>
+                                    <g id="Group_44" data-name="Group 44" transform="translate(16.69 4.492)">
+                                        <g id="Group_43" data-name="Group 43">
+                                            <circle id="Ellipse_16" data-name="Ellipse 16" cx="0.756" cy="0.756"
+                                                r="0.756"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.aparat.com/https://www.aparat.com/iaunac">
+                                <svg id="brand" xmlns="http://www.w3.org/2000/svg" width="22.973" height="22.982"
+                                    viewBox="0 0 22.973 22.982">
+                                    <g id="icon--fourth">
+                                        <path id="Path_823" data-name="Path 823"
+                                            d="M15.677.675,13.562.123A3.557,3.557,0,0,0,9.208,2.648L8.68,4.642a10.894,10.894,0,0,1,7-3.967Z"
+                                            transform="translate(-5.763 -0.003)"></path>
+                                        <path id="Path_824" data-name="Path 824"
+                                            d="M.641,39.33.123,41.283a3.557,3.557,0,0,0,2.525,4.351l2.017.538A10.9,10.9,0,0,1,.641,39.33Z"
+                                            transform="translate(-0.003 -26.107)"></path>
+                                        <path id="Path_825" data-name="Path 825"
+                                            d="M55.993,9.062l-2.263-.6a10.894,10.894,0,0,1,4.169,7.3l.622-2.354a3.557,3.557,0,0,0-2.528-4.341Z"
+                                            transform="translate(-35.666 -5.617)"></path>
+                                        <path id="Path_826" data-name="Path 826"
+                                            d="M38.69,57.89l2.169.585a3.557,3.557,0,0,0,4.351-2.525l.612-2.3a10.9,10.9,0,0,1-7.131,4.24Z"
+                                            transform="translate(-25.682 -35.613)"></path>
+                                        <path id="Path_827" data-name="Path 827"
+                                            d="M14.5,4.54A9.962,9.962,0,1,0,24.455,14.5,9.962,9.962,0,0,0,14.5,4.54ZM8.854,9.509a2.844,2.844,0,1,1,2.256,3.332A2.844,2.844,0,0,1,8.854,9.509Zm4.139,8.607a2.844,2.844,0,1,1-.435-2.135A2.844,2.844,0,0,1,12.993,18.117Zm1.207-2.3a1.264,1.264,0,1,1,.951-.2,1.264,1.264,0,0,1-.951.2Zm5.934,3.675a2.844,2.844,0,1,1-2.256-3.332A2.844,2.844,0,0,1,20.134,19.489Zm-1.883-5.272a2.839,2.839,0,1,1,2.134-.436,2.844,2.844,0,0,1-2.134.436Z"
+                                            transform="translate(-3.008 -3.015)"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-box">
+        <p>{{lng.Translate('login-app-footer-p')}}</p>
+        <span>{{lng.Translate('login-app-footer-span')}}</span>
+    </div> -->
+</div>

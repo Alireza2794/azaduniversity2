@@ -2,18 +2,22 @@
     font-family: Vazirmatn RD UI FD !important;
 }
 
-ion-content {
+.content-box {
     --background: #F5F6FA;
-    --height: 100%;
+    height: calc(100% - 56px);
+
+    ion-grid ion-row {
+        padding-right: 5px;
+    }
+
+    ion-col {
+        padding-top: 0;
+    }
 }
 
-ion-content ion-grid ion-row {
-    padding-right: 5px;
-}
 
-ion-content ion-col {
-    padding-top: 0;
-}
+
+
 
 /* search form box css */
 .filterlist {
@@ -78,7 +82,7 @@ ion-content ion-col {
     .selectlist {
         margin-top: 20px;
 
-        .datelist{
+        .datelist {
             background: #FFFFFF;
             border: 1px solid #D2D3D9;
             border-radius: 4px;

@@ -28,4 +28,10 @@
 @import "src/assets/bootstarp-rtl/css/bootstrap.rtl.min.css";
 @import "src/assets/bootstarp-rtl/css/bootstrap-grid.rtl.min.css";
 
-
+* {
+    font-family: Vazirmatn RD UI FD !important;
+}
+body,
+html{
+    direction: rtl;
+}

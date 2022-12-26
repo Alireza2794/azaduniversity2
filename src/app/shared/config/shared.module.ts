@@ -7,13 +7,16 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { RouterModule } from '@angular/router';
 import { FCM } from '@awesome-cordova-plugins/fcm/ngx';
 import { IonicModule } from '@ionic/angular';
+import { Interceptor } from 'src/app/http.interceptor';
 // import { Interceptor } from 'src/app/http.interceptor';
-import { CalendarComponent, DatePickerComponent } from '../components/index.api';
+import { CalendarComponent, DatePickerComponent, HomeComponent } from '../components/index.api';
 import { routes } from './shared.routes';
 
 const Components = [
     DatePickerComponent,
-    CalendarComponent
+    CalendarComponent,
+    HomeComponent
+    
 ];
 const Modules = [
     MatDatepickerModule,
@@ -24,11 +27,11 @@ const Modules = [
 
 @NgModule({
     declarations: [...Components],
-    imports: [CommonModule, RouterModule.forChild(routes), IonicModule.forRoot(), HttpClientModule],
+    imports: [CommonModule, RouterModule.forChild(routes), IonicModule.forRoot(), HttpClientModule, ...Modules],
     exports: [...Components],
     providers: [
         FCM,
-        // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
         { provide: DateAdapter, useClass: MatDatepickerModule, deps: [MAT_DATE_LOCALE] },
         { provide: MAT_DATE_FORMATS, useValue: MAT_DATE_FORMATS },
     ],
