@@ -66,10 +66,10 @@ MIT
 @angular/router
 MIT
 
-@angular/service-worker
+@awesome-cordova-plugins/core
 MIT
 
-@awesome-cordova-plugins/core
+@awesome-cordova-plugins/device
 MIT
 
 @awesome-cordova-plugins/fcm

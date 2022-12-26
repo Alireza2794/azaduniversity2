@@ -4,8 +4,7 @@ import { environment } from 'src/environments/environment';
 import { DataQueryInput } from '../models/shared.mode';
 import { AuthService } from './auth.service';
 // import packageJson from '../../../../package.json';
-import { Device } from '@awesome-cordova-plugins/device/ngx';
-import { Platform } from '@ionic/angular';
+
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({

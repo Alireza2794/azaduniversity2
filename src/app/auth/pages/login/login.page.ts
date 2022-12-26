@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Device } from '@awesome-cordova-plugins/device/ngx';
+// import { Device } from '@awesome-cordova-plugins/device/ngx';
 import { Platform } from '@ionic/angular';
 import { AuthService as AuService } from 'src/app/shared/services/auth.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
@@ -17,8 +17,8 @@ export class LoginPage implements OnInit {
         private _service: AuthService,
         private _sharedService: SharedService,
         private _authService: AuService,
-        private _platform: Platform,
-        private _device: Device,
+        // private _platform: Platform,
+        // private _device: Device,
         private _router: Router,
 
     ) { }
@@ -54,13 +54,13 @@ export class LoginPage implements OnInit {
     }
 
     ngOnInit(): void {
-        if (this._platform.is("android")) {
-            this.downloadApk = true;
-            if ((this._device != null) && (this._device.uuid != null) && (this._device.uuid.length > 0)) {
-                this.downloadApk = false;
-                this.isAndroidApk = true;
-            }
-        }
+        // if (this._platform.is("android")) {
+        //     this.downloadApk = true;
+        //     if ((this._device != null) && (this._device.uuid != null) && (this._device.uuid.length > 0)) {
+        //         this.downloadApk = false;
+        //         this.isAndroidApk = true;
+        //     }
+        // }
         this.FormGroup = this._formBuilder.group({
             usernameFormControl: ['', Validators.required],
             passwordFormControl: ['', Validators.required]

@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/config/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Device } from '@awesome-cordova-plugins/device/ngx';
+// import { Device } from '@awesome-cordova-plugins/device/ngx';
 import { Interceptor } from './http.interceptor';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { Interceptor } from './http.interceptor';
     // }),
     BrowserAnimationsModule],
   providers: [
-    HttpClientModule, Device,
+    HttpClientModule, 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
   ],
