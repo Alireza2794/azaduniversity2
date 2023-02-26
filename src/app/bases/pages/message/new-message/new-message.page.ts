@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { BaseService } from 'src/app/bases/service/base.service';
 
 @Component({
   selector: 'app-new-message',
@@ -8,18 +9,27 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class NewMessagePage implements OnInit {
 
-  // mysendform: any = FormGroup
-  constructor() { }
+  constructor(public baseService: BaseService,
+    private _formBuilder: FormBuilder,
+    ) {}
 
-  ngOnInit() {
-    // this.mysendform = new FormGroup({
-    //   inputText : new FormControl(),
-    //   section : new FormControl(),
-    //   major : new FormControl(),
-    //   term : new FormControl(),
-    //   sendNow : new FormControl(),
-    //   sendLater : new FormControl()
-    //  })
+    FormGroupMessage = FormGroup;
+
+  ngOnInit() {}
+
+  AddNotification(title: string, text: string, groupId: [number], personId: [number], image: string = '', actionUrl: string = '', activeInbox: boolean = true) {
+    return new Promise(async (resolve, reject) => {
+      this.baseService.AddNotification({
+        "Title": title,
+        "Text": text,
+        "ActionUrl": actionUrl,
+        "Image": image,
+        "ActiveInbox": activeInbox,
+        "GroupId": groupId,
+        "PersonId": personId
+      }).then((result: any) => {
+         resolve(result); }, (err) => { reject(err); });
+    });
   }
 
 }

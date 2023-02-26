@@ -16,12 +16,9 @@
               <form class="form-group">
                 <div class="mb-3">
                   <label>تاریخ</label>
-                  <!-- <select class="form-select">
-                    <option [value]="list1">همه موارد</option>
-                  </select> -->
                   <ion-item class="datelist" lines="none" detail="false">
                     <ion-label position="floating">همه موارد</ion-label>
-                    <!-- <app-date-picker [(value)]="list1"></app-date-picker> -->
+                    <app-date-picker></app-date-picker>
                   </ion-item>
                 </div>
                 <div class="mb-3">
@@ -75,9 +72,9 @@
             <thead>
               <tr>
                 <th>تاریخ</th>
+                <th>عنوان</th>
                 <th>متن پیام</th>
-                <th>مخاطبین</th>
-                <th>وضعیت</th>
+                <th>فرستنده</th>
               </tr>
             </thead>
             <tbody>
@@ -92,9 +89,10 @@
                 </td>
               </tr>
               <tr *ngFor="let item of notificationItems | filter : searchText | filter: searchmajor">
-                <td>{{item.startDate}}</td>
+                <td>{{item.creationDate | jdate}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.text}}</td>
+                <td>{{item.AdminName}}</td>
                 <td>
                   <!-- <div class="cont">
                     <span>{{message.term}}</span>

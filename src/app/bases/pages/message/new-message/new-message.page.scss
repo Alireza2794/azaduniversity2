@@ -168,7 +168,11 @@
     flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+
+    .tit{
+      margin-bottom: 6px !important;
+    }
 
     .inputtext {
       font-size: smaller;
@@ -179,7 +183,8 @@
       font-size: 13px;
       line-height: 20px;
       text-align: right;
-      color: #D2D3D9;
+      color: #0a0a0a;
+      resize: none;
     }
   }
 

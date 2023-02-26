@@ -9,7 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedModule } from 'src/app/shared/config/shared.module';
 // import { SharedModule } from 'src/app/shared/config/shared.module';
-import { BannersPage } from '../pages/banners/banners.page';
+import { BannersPage, FormatTimePipe } from '../pages/banners/banners.page';
 import { DashboardPage } from '../pages/dashboard/dashboard.page';
 import { MapUniversityPage } from '../pages/map-university/map-university.page';
 import { MessagePage } from '../pages/message/message.page';
@@ -34,12 +34,12 @@ const Modules: any = [
     OverlayModule,
     SharedModule,
     Ng2SearchPipeModule,
-    CommonModule
+    CommonModule,
     
 ];
 const Pipes = [DayOfWeekPipe, TimePipe, UrlPipe, DatePipe];
 @NgModule({
-    declarations: [...Pages, ...Pipes],
+    declarations: [...Pages, ...Pipes,FormatTimePipe],
     imports: [CommonModule, RouterModule.forChild(routes), ...Modules],
     exports: [...Pipes],
     providers: [

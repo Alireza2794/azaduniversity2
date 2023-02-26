@@ -13,7 +13,8 @@
           </ion-item>
         </ion-col>
         <ion-col size="12"  size-md="10">
-          <form>
+          <form >
+            <!-- [FormGroup]="FormGroupMessage" (ngSubmit)="AddNotification()" -->
             <ion-row>
               <!-- cartable section  message -->
               <ion-col class="colbox" size="12" >
@@ -24,12 +25,12 @@
                       <div class="messagetitle">
                         <div class="title">
                           <span class="imgnum"><ion-img src="./assets/icons/1.png"></ion-img></span>
-                          <span class="title ms-2">متن پیام </span>
+                          <span class="title tit ms-2">متن پیام </span>
                         </div>
                         <div>
-                          <textarea class="form-control inputtext"  cols="50" rows="10"
-                          placeholder="متن پیام خود را اینجا وارد کنید">
-                          </textarea>
+                          <input type="text" class="form-control mb-1" formControlName="title" placeholder="عنوان پیام">
+                          <textarea class="form-control inputtext"  cols="50" rows="9"
+                          placeholder="متن پیام خود را اینجا وارد کنید" formControlName="text"></textarea>
                         </div>
                       </div>
                     </ion-item>
